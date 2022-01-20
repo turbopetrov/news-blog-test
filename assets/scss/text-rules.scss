@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url('~/static/fonts/Montserrat-VariableFont_wght.ttf');
+}
+%heading {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.heading_xl{
+  @extend %heading;
+  font-size: 3.75em;
+  color: white;
+}
+.heading_sm{
+  @extend %heading;
+  font-size: 1.15em;
+  color: white;
+}
