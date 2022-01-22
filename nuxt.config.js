@@ -9,7 +9,7 @@ export default {
   head: {
     title: 'news-blog-test',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ru',
     },
     meta: [
       { charset: 'utf-8' },
