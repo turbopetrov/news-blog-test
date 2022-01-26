@@ -1,23 +1,30 @@
 <template lang="pug">
   .card 
-    h3.card__title.heading_md| Бамблби вновь нагнул десептиконов
+    h3.card__title.heading_md| {{title}}
     hr.card__divider
-    p.card__text.
-      Пишем какой-то текст просто чтобы проверить,
-      как работает параграф в карточке. Нам все еще нудно больше текста
-    app-button.card__button(
-      :hasIcon = 'false'
-      buttonTitle='Читать больше'
-      buttonColorTheme='dark'
-    )
+    p.card__text.paragraph_md.
+      {{short}}
+    NuxtLink(:to='{name: "id", params:{id: newsId} }')
+      app-button.card__button(
+        :hasIcon = 'false'
+        buttonTitle='Читать больше'
+        buttonColorTheme='dark'
+      )
     
 </template>
 
 <script>
 import btn from '~/components/app-button.vue'
 export default {
+  
   components:{
     'app-button':btn
+  },
+  props:{
+    title: {type: String, default: 'Заголовок новости'},
+    short: {type: String, default: 'Краткая новость'},
+    text: {type: String, default: 'Полный текст новости будет здесь'},
+    newsId: {type: Number, default: 0}
   },
   data(){
     return{}

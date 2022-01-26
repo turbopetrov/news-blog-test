@@ -1,13 +1,22 @@
 @font-face {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
   src: url('~/static/fonts/Montserrat-VariableFont_wght.ttf');
 }
 %heading {
-  font-family: 'Montserrat';
-  font-weight: 700;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-weight: 800;
   line-height: 100%;
   margin: 0;
   padding: 0;
+}
+
+%paragraph {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  line-height: 125%;
+  margin: 0;
+  padding: 0;
+  color: $dark;
 }
 
 .heading_xl{
@@ -27,3 +36,25 @@
   font-size: .875em;
   color: white;
 }
+
+.paragraph_xl{
+  @extend %paragraph;
+  font-size: 2em;
+}
+
+.paragraph_lg{
+  @extend %paragraph;
+  font-size: 1.25em;
+  font-weight: 200;
+}
+
+.paragraph_md{
+  @extend %paragraph;
+  font-size: 1em;
+}
+
+.dark{
+  color: $dark;
+}
+
+

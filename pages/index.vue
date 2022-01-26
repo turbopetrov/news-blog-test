@@ -8,11 +8,16 @@
   )
   .card-block
     app-card.news-card(
-      v-for='card in 6'
+      v-for='card in news',
+      :key='card.id'
+      :title='card.title'
+      :short='card.short'
+      :newsId='card.id'
     )
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import header from '~/components/app-header.vue'
 import card from '~/components/app-news-card.vue'
 
@@ -25,6 +30,10 @@ export default {
   data(){
     return{}
   },
+  computed:{
+    ...mapGetters('allNews',['news'])
+  }
+
 }
 </script>
 

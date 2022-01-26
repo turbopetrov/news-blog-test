@@ -53,6 +53,7 @@ export default {
       
     }
     &:hover{
+      cursor: pointer;
       border: 2px solid $yellow;
       box-shadow: 0px -1px 30px -6px #EBEF18;
     }
