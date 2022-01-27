@@ -6,6 +6,7 @@ header.header
       v-if='hasButton'
       :buttonTitle='buttonTitle'
       :buttonIcon='buttonIcon'
+      @handler='buttonAction'
     )
 </template>
 
@@ -33,6 +34,10 @@ export default {
     buttonIcon:{
       type: String,
       default: 'add-icon'
+    },
+    buttonAction:{
+      type: Function,
+      default: null
     }
   },
   data(){

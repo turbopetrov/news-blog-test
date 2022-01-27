@@ -52,6 +52,12 @@
   @extend %paragraph;
   font-size: 1em;
 }
+.paragraph_xs{
+  @extend %paragraph;
+  font-size: 14px;
+  font-weight: 200;
+  font-style: italic;
+}
 
 .dark{
   color: $dark;

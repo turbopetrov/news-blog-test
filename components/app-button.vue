@@ -1,8 +1,13 @@
 <template lang="pug">
-  button.btn(:class='`btn_${buttonColorTheme}`')
+  button.btn(
+    :class='`btn_${buttonColorTheme}`'
+    @click='$emit("handler")'
+    )
     .btn__icon-wrap(v-if='hasIcon')
       img.btn__icon(:src='require(`~/assets/img/${buttonIcon}.png`)')
-    p.btn__title.heading_sm| {{buttonTitle}}
+    p.btn__title.heading_sm(
+      :class='`${buttonColorTheme}`'
+    )| {{buttonTitle}}
 </template>
 
 <script>
@@ -62,8 +67,9 @@ export default {
       background: transparent;
     }
     &_dark{
+      color: $dark !important;
       border: 2px solid $dark;
-      background: $dark;
+      background: transparent;
     }
 
   }

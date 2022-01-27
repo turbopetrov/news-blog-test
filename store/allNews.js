@@ -44,3 +44,9 @@ export const getters = {
     return state.allNews
   }
 };
+
+export const mutations = {
+  addPost(state, newPost){
+    state.allNews.push(newPost)
+  }
+}

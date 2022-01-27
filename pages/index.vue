@@ -5,6 +5,7 @@
     hasButton = true,
     buttonTitle = 'Добавить новость'
     buttonIcon = 'add-icon'
+    :buttonAction = 'goToAddPostPage'
   )
   .card-block
     app-card.news-card(
@@ -32,6 +33,11 @@ export default {
   },
   computed:{
     ...mapGetters('allNews',['news'])
+  },
+  methods:{
+    goToAddPostPage(){
+      this.$router.push({name:'addPost'})
+    }
   }
 
 }
