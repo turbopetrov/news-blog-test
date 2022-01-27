@@ -48,5 +48,15 @@ export const getters = {
 export const mutations = {
   addPost(state, newPost){
     state.allNews.push(newPost)
+  },
+  editPost(state, freshPost){
+    const currentPost = state.allNews.find(item=> item.id === freshPost.id)
+    const targetIndex = state.allNews.indexOf(currentPost)
+    state.allNews[targetIndex] = freshPost
+  },
+  deletePost(state, id){
+    const currentPost = state.allNews.find(item=> item.id === id)
+    const targetIndex = state.allNews.indexOf(currentPost)
+    state.allNews.splice(targetIndex, 1)
   }
 }

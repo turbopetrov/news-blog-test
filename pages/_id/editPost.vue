@@ -23,6 +23,13 @@ section.edit-post
       buttonColorTheme='dark',
       @handler='savePost'
     )
+    app-button.edit-post__button(
+      hasIcon,
+      buttonTitle='Удалить новость',
+      buttonIcon='delete-icon',
+      buttonColorTheme='dark',
+      @handler='deletePost'
+    )
 </template>
 
 <script>
@@ -56,7 +63,21 @@ export default {
   },
 
   methods: {
-    savePost() {},
+    savePost() {
+      this.$store.commit('allNews/editPost', this.currentPost)
+      alert('Новость сохранена')
+      setTimeout(()=>this.$router.push({name:'index'}),200)
+    },
+    deletePost(){
+      const accept = confirm('Удалить новость?')
+      if(accept){
+        this.$store.commit('allNews/deletePost', this.currentPost.id)
+        alert('Новость удалена')
+        setTimeout(()=>this.$router.push({name:'index'}),200)
+      }
+      }
+      
+    
   },
 }
 </script>
